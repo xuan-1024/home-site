@@ -1,0 +1,72 @@
+# dependencies
+/node_modules
+**/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+packages/*/dist/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.trae
+
+# worktrees
+.worktrees
+.release
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# pnpm cache
+.pnpm-store
+
+# migration files (opt in reviewed migrations explicitly)
+supabase/migrations/*
+!supabase/migrations/20260723_100000_create_meihua_xiaoliuren_web.sql
+!supabase/migrations/20260723_110000_drop_mcp_auth_storage.sql
+
+# docs
+docs/*
+
+# AI
+.claude
+**/CLAUDE.md
+.ace-tool/
+
+# skill eval workspaces
+skills/*-workspace/
