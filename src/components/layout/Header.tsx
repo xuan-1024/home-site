@@ -28,6 +28,7 @@ import { useAnnouncementCenterSafe } from '@/components/providers/AnnouncementPo
 import { SettingsCenterLink } from '@/components/settings/SettingsCenterLink';
 import { useActiveSettingsCenterTab } from '@/lib/hooks/useSettingsCenterRouteState';
 import { getSettingsCenterRouteTarget, isAdminSettingsCenterTab } from '@/lib/settings-center';
+import { SITE_NAME } from '@/lib/site-config';
 
 // 路由到标题的映射
 const ROUTE_LABELS: Record<string, string> = {
@@ -119,7 +120,7 @@ export function Header() {
 
     // 获取当前页面标题
     const getPageTitle = () => {
-        if (!pathname) return '太卜';
+        if (!pathname) return SITE_NAME;
         // 优先匹配更长的路径
         const sortedKeys = Object.keys(ROUTE_LABELS).sort((a, b) => b.length - a.length);
         for (const key of sortedKeys) {
@@ -127,7 +128,7 @@ export function Header() {
                 return ROUTE_LABELS[key];
             }
         }
-        return '太卜';
+        return SITE_NAME;
     };
 
     const pageTitle = getPageTitle();

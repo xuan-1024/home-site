@@ -5,6 +5,7 @@
  */
 
 import html2canvas from 'html2canvas';
+import { SITE_NAME } from '@/lib/site-config';
 
 export interface ShareCardOptions {
     /** 卡片容器元素 */
@@ -110,7 +111,7 @@ export async function shareCard(
         // 检查是否支持 Web Share API
         if (navigator.canShare && navigator.canShare({ files: [file] })) {
             await navigator.share({
-                title: shareData.title || '太卜 运势卡片',
+                title: shareData.title || `${SITE_NAME} 运势卡片`,
                 text: shareData.text || '查看我的今日运势',
                 files: [file],
             });

@@ -70,3 +70,4 @@ docs/*
 
 # skill eval workspaces
 skills/*-workspace/
+.env*

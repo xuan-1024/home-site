@@ -12,6 +12,7 @@
 
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { SITE_NAME } from "@/lib/site-config";
 
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import { HeaderMenuProvider } from "@/components/layout/HeaderMenuContext";
@@ -74,23 +75,23 @@ const themeInitScript = `
 // SEO 元数据配置
 export const metadata: Metadata = {
   title: {
-    default: "太卜",
-    template: "%s | 太卜"
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`
   },
   description: "将传统命理文化与前沿AI技术深度融合，为您提供专业、私密、便捷的命理咨询服务。八字精批、紫微斗数、塔罗占卜等多种命理体系。",
   keywords: ["命理", "八字", "AI算命", "紫微斗数", "塔罗", "运势", "命盘分析"],
-  authors: [{ name: "太卜" }],
-  creator: "太卜",
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
   openGraph: {
     type: "website",
     locale: "zh_CN",
-    siteName: "太卜",
-    title: "太卜",
+    siteName: SITE_NAME,
+    title: SITE_NAME,
     description: "AI驱动的个性化命理分析，多人格AI命理师，记忆式对话体验",
   },
   twitter: {
     card: "summary_large_image",
-    title: "太卜",
+    title: SITE_NAME,
     description: "AI驱动的个性化命理分析",
   },
   icons: {

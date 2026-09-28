@@ -26,6 +26,7 @@ import { parseLongitude } from '@/lib/divination/place-resolution';
 import { useAdminJsonCopy } from '@/lib/admin/useAdminJsonCopy';
 import { CopyTextModal } from '@/components/divination/CopyTextModal';
 import type { ChartTextDetailLevel } from '@/lib/divination/detail-level';
+import { SITE_NAME } from '@/lib/site-config';
 
 function ZiweiResultContent() {
     const searchParams = useSearchParams();
@@ -273,7 +274,7 @@ function ZiweiResultContent() {
         }
         const url = window.location.href;
         if (navigator.share) {
-            try { await navigator.share({ title: `${resolvedFormData.name}的紫微命盘 - 太卜`, text: `查看${resolvedFormData.name}的紫微斗数命盘`, url }); } catch { }
+            try { await navigator.share({ title: `${resolvedFormData.name}的紫微命盘 - ${SITE_NAME}`, text: `查看${resolvedFormData.name}的紫微斗数命盘`, url }); } catch { }
         } else {
             try { await navigator.clipboard.writeText(url); showToast('success', '链接已复制到剪贴板'); } catch { showToast('error', '复制链接失败'); }
         }

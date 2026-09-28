@@ -33,6 +33,7 @@ import { loadLatestConversationAnalysisSnapshot } from '@/lib/chat/conversation-
 import { createSavedChart, loadSavedChart } from '@/lib/user/charts-client';
 import { useSessionMembership } from '@/lib/hooks/useSessionMembership';
 import { parseBirthTimeString } from '@/lib/divination/birth-time';
+import { SITE_NAME } from '@/lib/site-config';
 import { parseNumberParam } from '@/lib/divination/bazi-form-utils';
 import { parseLongitude } from '@/lib/divination/place-resolution';
 import { useAdminJsonCopy } from '@/lib/admin/useAdminJsonCopy';
@@ -381,7 +382,7 @@ function BaziResultContent() {
         if (navigator.share) {
             try {
                 await navigator.share({
-                    title: `${formData.name}的八字命盘 - 太卜`,
+                    title: `${formData.name}的八字命盘 - ${SITE_NAME}`,
                     text: `查看${formData.name}的八字命盘分析`,
                     url,
                 });

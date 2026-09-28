@@ -24,6 +24,7 @@ import { useFeatureToggles } from '@/lib/hooks/useFeatureToggles';
 import { useNotificationUnreadCount } from '@/lib/hooks/useNotificationUnreadCount';
 import { getSidebarNavItems, getSidebarToolItems } from '@/lib/navigation/registry';
 import { useConversationList } from '@/lib/chat/ConversationListContext';
+import { SITE_NAME } from '@/lib/site-config';
 
 // Derive from registry once at module level
 const navItems = getSidebarNavItems();
@@ -47,8 +48,8 @@ function SidebarSkeleton() {
         ">
             <div className="flex items-center h-16 px-4 border-b border-gray-200 dark:border-white/10 justify-between">
                 <Link href="/" className="flex items-center gap-2 min-w-0">
-                    <Image src="/Logo.svg" alt="太卜 Logo" width={28} height={28} className="rounded-md flex-shrink-0 dark:invert" />
-                    <span className="font-bold text-base text-[#37352f] dark:text-[#f5f3ee] whitespace-nowrap">太卜</span>
+                    <Image src="/Logo.svg" alt="{SITE_NAME} Logo" width={28} height={28} className="rounded-md flex-shrink-0 dark:invert" />
+                    <span className="font-bold text-base text-[#37352f] dark:text-[#f5f3ee] whitespace-nowrap">{SITE_NAME}</span>
                 </Link>
                 <div className="w-8 h-8 rounded-md bg-[#efedea] dark:bg-white/10 animate-pulse" />
             </div>
@@ -70,8 +71,8 @@ function SidebarLoadError({ onRetry }: { onRetry: () => void }) {
         ">
             <div className="flex items-center h-16 px-4 border-b border-gray-200 dark:border-white/10">
                 <Link href="/" className="flex items-center gap-2 min-w-0">
-                    <Image src="/Logo.svg" alt="太卜 Logo" width={28} height={28} className="rounded-md flex-shrink-0 dark:invert" />
-                    <span className="font-bold text-base text-[#37352f] dark:text-[#f5f3ee] whitespace-nowrap">太卜</span>
+                    <Image src="/Logo.svg" alt="{SITE_NAME} Logo" width={28} height={28} className="rounded-md flex-shrink-0 dark:invert" />
+                    <span className="font-bold text-base text-[#37352f] dark:text-[#f5f3ee] whitespace-nowrap">{SITE_NAME}</span>
                 </Link>
             </div>
             <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
@@ -149,13 +150,13 @@ function SidebarInner() {
                     <Link href="/" className="flex items-center gap-2 min-w-0">
                         <Image
                             src="/Logo.svg"
-                            alt="太卜 Logo"
+                            alt="{SITE_NAME} Logo"
                             width={28}
                             height={28}
                             className="rounded-md flex-shrink-0 dark:invert"
                         />
                         <span className="font-bold text-base text-[#37352f] dark:text-[#f5f3ee] whitespace-nowrap">
-                            太卜
+                            {SITE_NAME}
                         </span>
                     </Link>
                     <button
